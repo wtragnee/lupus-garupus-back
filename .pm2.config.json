@@ -1,0 +1,9 @@
+{
+  "apps" : [{
+    "name"        : "app",
+    "script"      : "app.js",
+    "watch"       : true,
+    "ignore_watch": ["node_modules", "core", ".vscode"],
+    "node_args": ["--inspect=0.0.0.0:5959"]
+  }]
+}
