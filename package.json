@@ -1,0 +1,23 @@
+{
+  "name": "lupus-garupus-back",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "start": "node app.js",
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/wtragnee/lupus-garupus-back.git"
+  },
+  "author": "wtragnee",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/wtragnee/lupus-garupus-back/issues"
+  },
+  "homepage": "https://github.com/wtragnee/lupus-garupus-back#readme",
+  "dependencies": {
+    "express": "^4.16.3"
+  }
+}
