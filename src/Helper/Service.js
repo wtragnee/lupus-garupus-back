@@ -16,12 +16,22 @@ class Service {
     this._container = new Jimple();
   }
 
-  _initNewService({ name, classPath, isClass, methodName, module, submodule, args }) {
+  _initNewService({
+    name,
+    classPath,
+    isClass,
+    methodName,
+    module,
+    submodule,
+    args
+  }) {
     let Class;
     // Get class, module or submodule depending on the config
     if (classPath) {
+      // eslint-disable-next-line
       Class = require(fs.realpathSync(classPath));
     } else if (module) {
+      // eslint-disable-next-line
       const module = require(module);
       if (submodule) {
         Class = module[submodule];
@@ -52,9 +62,9 @@ class Service {
    */
   _getArguments(args) {
     if (_.isObject(args)) {
-      return _.mapValues(args, (arg) => this._getArgument(arg));
+      return _.mapValues(args, arg => this._getArgument(arg));
     } else if (_.isArray(args)) {
-      return _.map(args, (arg) => this._getArgument(arg));
+      return _.map(args, arg => this._getArgument(arg));
     }
     if (_.isString(args)) {
       return this._getArgument(args);
@@ -86,7 +96,8 @@ class Service {
 
   load() {
     const paths = new ReadPath(this._options).listSync();
-    _.forEach(paths, (path) => {
+    _.forEach(paths, path => {
+      // eslint-disable-next-line
       const serviceConfig = require(path);
       if (!_.has(serviceConfig, 'name')) {
         throw new BaseError(`Missing name property for: ${path}`);

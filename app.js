@@ -6,10 +6,11 @@ const service = new Service({});
 const container = service.load();
 
 app.get('/', (req, res) => {
-  res.send('Hello World!')
+  res.send('Hello World!');
 });
 
 const PORT = container.get('config').app.port;
 app.listen(PORT, () => {
+  // eslint-disable-next-line
   console.log(`Example app listening on port ${PORT}!`);
 });

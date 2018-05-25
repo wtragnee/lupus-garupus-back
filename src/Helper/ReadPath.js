@@ -15,8 +15,8 @@ class ReadPath {
     if (!fs.lstatSync(path).isDirectory()) {
       return path;
     }
-    return _.flatMap(fs.readdirSync(path), (name) => this._listSyncRecursive(`${path}/${name}`));
-
+    const recursive = name => this._listSyncRecursive(`${path}/${name}`);
+    return _.flatMap(fs.readdirSync(path), recursive);
   }
 
   listSync() {
