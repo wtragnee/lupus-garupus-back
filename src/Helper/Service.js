@@ -12,7 +12,7 @@ const moduleArgsRegex = /^@(.+)@$/gi;
 class Service {
   constructor({ path = './config/services' }) {
     this._options = { path };
-    this._config = new Config({ path });
+    this._config = new Config({});
     this._container = new Jimple();
   }
 
@@ -84,7 +84,7 @@ class Service {
         return this._container;
       } else if (arg.match(stringArgsRegex)) {
         const options = stringArgsRegex.exec(arg);
-        return _.get(this._parameters, _.nth(options, 1));
+        return _.get(this._config, _.nth(options, 1));
       } else if (arg.match(moduleArgsRegex)) {
         const options = moduleArgsRegex.exec(arg);
         // eslint-disable-next-line global-require, import/no-dynamic-require

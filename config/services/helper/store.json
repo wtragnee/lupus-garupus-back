@@ -2,7 +2,5 @@
   "classPath": "./src/Helper/Store/Store.js",
   "isClass": true,
   "name": "store",
-  "args": {
-    "container": "Container"
-  }
+  "args": "%store%"
 }
