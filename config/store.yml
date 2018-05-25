@@ -1,0 +1,5 @@
+default:
+  type: datastore
+
+test:
+  type: test
