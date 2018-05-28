@@ -11,6 +11,15 @@ class Base {
   register(app) {
     this.app = app;
     if (_.has(this.config, 'path')) {
+      const { middlewares } = this;
+      if (_.some(middlewares)) {
+        _.each(middlewares, middlewareName => {
+          const Middleware = require(`../Middleware/${middlewareName}`); // eslint-disable-line
+          const middleware = new Middleware(this._container);
+          this.app.route(this.config.path).all(middleware.middleware);
+        });
+      }
+
       this.app.get(this.config.path, this.get());
       this.app.post(this.config.path, this.post());
       this.app.put(this.config.path, this.put());
@@ -21,6 +30,10 @@ class Base {
 
   constructor({ container }) {
     this._container = container;
+  }
+
+  get middlewares() {
+    return ['BodyParser'];
   }
 
   get config() {
