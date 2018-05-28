@@ -2,7 +2,6 @@ os:
 - linux
 language: node_js
 node_js: '9.8'
-sudo: required
 services:
 - docker
 notifications:

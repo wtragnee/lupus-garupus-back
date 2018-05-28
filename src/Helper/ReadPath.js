@@ -13,7 +13,7 @@ class ReadPath {
 
   _listSyncRecursive(path) {
     if (!fs.lstatSync(path).isDirectory()) {
-      return path;
+      return [path];
     }
     const recursive = name => this._listSyncRecursive(`${path}/${name}`);
     return _.flatMap(fs.readdirSync(path), recursive);

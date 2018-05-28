@@ -21,7 +21,7 @@ class Service {
     classPath,
     isClass,
     methodName,
-    module,
+    moduleName,
     submodule,
     args
   }) {
@@ -30,9 +30,9 @@ class Service {
     if (classPath) {
       // eslint-disable-next-line
       Class = require(fs.realpathSync(classPath));
-    } else if (module) {
+    } else if (moduleName) {
       // eslint-disable-next-line
-      const module = require(module);
+      const module = require(moduleName);
       if (submodule) {
         Class = module[submodule];
       } else {
