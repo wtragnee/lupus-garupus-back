@@ -1,0 +1,6 @@
+{
+  "classPath": "./src/Helper/Logger.js",
+  "isClass": true,
+  "name": "logger",
+  "args": "%logger%"
+}

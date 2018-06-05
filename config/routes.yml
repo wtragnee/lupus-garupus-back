@@ -1,0 +1,9 @@
+default:
+  paths:
+    - ./src/Route/Routes
+    - ./src/Route/Base.js
+
+production:
+  paths:
+    - ./src/Route/Routes/GameToken.js
+    - ./src/Route/Base.js

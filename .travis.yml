@@ -1,0 +1,12 @@
+os:
+- linux
+language: node_js
+node_js: '9.8'
+services:
+- docker
+notifications:
+  email:
+  - w.tragnee@gmail.com
+script:
+- npm run lint
+- npm test

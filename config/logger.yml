@@ -1,0 +1,5 @@
+default:
+  level: debug
+
+production:
+  level: info
