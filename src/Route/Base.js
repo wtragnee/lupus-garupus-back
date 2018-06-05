@@ -33,7 +33,7 @@ class Base {
   }
 
   get middlewares() {
-    return ['BodyParser'];
+    return ['AllowCrossOrigin', 'BodyParser'];
   }
 
   get config() {
